@@ -1,0 +1,34 @@
+services:
+
+  app:
+    build: 
+      context: .
+    
+    container_name: academia_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - mysql
+    env_file:
+      - .env
+    restart: unless-stopped
+
+
+  mysql:
+    image: mysql:8.0
+    container_name: academia_mysql
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=academia 
+      - MYSQL_USER=usuario
+      - MYSQL_PASSWORD=academia123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

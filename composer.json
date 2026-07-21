@@ -1,0 +1,15 @@
+{
+    "name": "polouab/sistema-academia",
+    "description": "sistema para gerenciamento de academia",
+    "autoload": {
+        "psr-4": {
+            "App": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Francisco Martins Gonçalves Gomes"
+        }
+    ],
+    "require": {}
+}
