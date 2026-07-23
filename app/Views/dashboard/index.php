@@ -2,10 +2,10 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>clientes</title>
+    <title>dashboard</title>
 </head>
 <body>
 
-<h1>clientes</h1>
+<h1>dashBoard</h1>
 </body>
 </html>

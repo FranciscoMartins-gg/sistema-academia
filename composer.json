@@ -3,7 +3,7 @@
     "description": "sistema para gerenciamento de academia",
     "autoload": {
         "psr-4": {
-            "App": "app/"
+            "App\\": "app/"
         }
     },
     "authors": [
