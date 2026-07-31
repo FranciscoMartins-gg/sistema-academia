@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-class DashBoardController
+class DashboardController
 {
     public function index()
     {
-        require_once __DIR__ . '/../Views/dashBoard/index.php';
+        require_once __DIR__ . '/../Views/dashboard/index.php';
     }
 }

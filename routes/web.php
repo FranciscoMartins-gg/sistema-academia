@@ -2,7 +2,7 @@
 
 use App\Controllers\AcessoController;
 use App\Controllers\ClienteController;
-use App\Controllers\DashBoardController;
+use App\Controllers\DashboardController;
 use App\Controllers\LoginController;
 use App\Controllers\PagamentoController;
 use App\Controllers\PlanoController;
