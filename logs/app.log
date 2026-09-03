@@ -1,0 +1,50 @@
+[15-08-2026 12:54:03]  - [ERRO]: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'teste2@gmail.com' for key 'clientes.email' 
+[15-08-2026 13:21:02]  - [ERRO]: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'teste2@gmail.com' for key 'clientes.email' 
+[15-08-2026 13:33:19]  - [ERRO]: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'teste2@gmail.com' for key 'clientes.email' 
+[15-08-2026 14:39:49]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND
+        ORDER BY a.hora_entrada DESC
+        LIMIT '5'' at line 6 
+[15-08-2026 14:40:04]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND
+        ORDER BY a.hora_entrada DESC
+        LIMIT '5'' at line 6 
+[15-08-2026 14:40:14]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND
+        ORDER BY a.hora_entrada DESC
+        LIMIT '5'' at line 6 
+[15-08-2026 14:40:17]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND
+        ORDER BY a.hora_entrada DESC
+        LIMIT '5'' at line 6 
+[15-08-2026 14:40:44]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.hora_entrada DESC
+        LIMIT '5'' at line 6 
+[15-08-2026 14:40:45]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY a.hora_entrada DESC
+        LIMIT '5'' at line 6 
+[15-08-2026 14:41:18]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON
+        ORDER BY a.hora_entrada DESC
+        LIMIT '5'' at line 6 
+[15-08-2026 14:41:54]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 6 
+[15-08-2026 14:41:55]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 6 
+[15-08-2026 14:41:56]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 6 
+[15-08-2026 14:41:56]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 6 
+[15-08-2026 14:41:56]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 6 
+[15-08-2026 14:42:23]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 6 
+[15-08-2026 14:42:49]  - [ERRO]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.id_cliente' in 'field list' 
+[15-08-2026 14:43:24]  - [ERRO]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.id_cliente' in 'field list' 
+[15-08-2026 14:43:42]  - [ERRO]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.id_cliente' in 'field list' 
+[15-08-2026 14:43:54]  - [ERRO]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.id_cliente' in 'field list' 
+[16-08-2026 20:39:09]  - [ERRO]: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'academia.clientes' doesn't exist 
+[03-09-2026 03:28:41]  - [ERRO]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.id_pagamentos' in 'field list' 
+[03-09-2026 03:30:05]  - [ERRO]: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'status' in where clause is ambiguous 
+[03-09-2026 03:30:08]  - [ERRO]: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'status' in where clause is ambiguous 
+[03-09-2026 03:51:20]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #4 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'academia.p.valor' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by 
+[03-09-2026 04:39:40]  - [ERRO]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'total_atrasado' in 'order clause' 
+[03-09-2026 04:41:09]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY p.valor DESC
+        LIMIT 5' at line 7 
+[03-09-2026 04:41:11]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY p.valor DESC
+        LIMIT 5' at line 7 
+[03-09-2026 04:41:19]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 5' at line 7 
+[03-09-2026 04:41:20]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 5' at line 7 
+[03-09-2026 04:42:21]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY p.valor DESC
+        LIMIT 5' at line 7 
+[03-09-2026 04:42:21]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY p.valor DESC
+        LIMIT 5' at line 7 
+[03-09-2026 04:42:57]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 5' at line 7 
+[03-09-2026 04:43:11]  - [ERRO]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 5' at line 7 

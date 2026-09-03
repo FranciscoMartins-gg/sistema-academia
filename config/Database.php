@@ -21,9 +21,9 @@ class Database{
         
             $host = $_ENV["MYSQL_HOST"];
             $user = $_ENV["MYSQL_USER"];
-            $password = $_ENV["MYSLQ_PASSWORD"];
+            $password = $_ENV["MYSQL_PASSWORD"];
             $dbname = $_ENV["MYSQL_DATABASE"];
-            $dsn = "myslq:host=$host;dbname=$dbname;charset=ut8mb4";
+            $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
         
             try {
 

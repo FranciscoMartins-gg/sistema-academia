@@ -1,0 +1,108 @@
+/* NAVBAR */
+
+.navbar {
+    height: 80px;
+
+    background: #292929;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 38px;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    width: 180px;
+
+    color: #ff7900;
+}
+
+.logo-icon {
+    font-size: 35px;
+    margin-right: 8px;
+}
+
+.logo strong {
+    display: block;
+
+    font-size: 17px;
+    line-height: 15px;
+}
+
+.logo span {
+    display: block;
+
+    color: white;
+
+    font-size: 7px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* MENU */
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 45px;
+
+    margin-left: 10px;
+}
+
+.menu a {
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 29px 0;
+}
+
+.menu a:hover {
+    color: #ff7900;
+}
+
+.menu a.active {
+    color: #ff7900;
+}
+
+
+/* BOLINHA EMBAIXO DO MENU */
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: #ff7900;
+
+    border-radius: 50%;
+
+    bottom: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    opacity: 0;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+    opacity: 1;
+}
