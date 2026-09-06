@@ -2,77 +2,60 @@
 
 Sistema web para gerenciamento de uma academia, desenvolvido como projeto acadêmico.
 
-O sistema permite cadastrar clientes e planos, controlar pagamentos e registrar as entradas e saídas dos clientes.
-
 ## Funcionalidades
 
-- Dashboard do sistema
-- Cadastro de clientes
-- Edição de clientes
-- Exclusão de clientes
-- Cadastro de planos
-- Edição de planos
-- Consulta de planos
-- Consulta de pagamentos por cliente
+- Dashboard
+- Cadastro, edição e exclusão de clientes
+- Cadastro e edição de planos
+- Controle de pagamentos
 - Filtro de pagamentos por status
-- Registro de pagamento de parcelas
-- Registro de entrada de clientes
-- Registro de saída de clientes
-- Histórico de acessos dos clientes
-- Sistema de mensagens de sucesso e erro
-- Registro de erros da aplicação em arquivo de log
+- Registro de entrada e saída de clientes
+- Histórico de acessos
+- Mensagens de sucesso e erro
+- Registro de erros em log
 
-## Tecnologias utilizadas
+## Tecnologias
 
 - PHP 8.3
 - Apache
 - MySQL 8.0
 - Docker
 - Docker Compose
-- HTML5
-- CSS3
 - Composer
 - PDO
-- Arquitetura MVC
+- HTML5
+- CSS3
+- MVC
 
 ## Requisitos
-
-Para executar o projeto, é necessário ter instalado:
 
 - Git
 - Docker
 - Docker Compose
+- Composer
 
-No Windows, pode ser utilizado o Docker Desktop.
+PHP e MySQL não precisam ser instalados diretamente na máquina, pois são executados através do Docker.
 
-O PHP e o MySQL não precisam ser instalados diretamente na máquina, pois o projeto utiliza containers Docker.
-
-## Estrutura do projeto
+## Estrutura
 
 ```text
 sistema-academia/
-│
 ├── app/
 │   ├── Controllers/
 │   ├── Helpers/
 │   ├── Models/
 │   └── Views/
-│
 ├── config/
 │   ├── Database.php
 │   └── Migrations.php
-│
 ├── logs/
 │   └── .gitkeep
-│
 ├── public/
 │   ├── css/
 │   ├── .htaccess
 │   └── index.php
-│
 ├── routes/
 │   └── web.php
-│
 ├── .env
 ├── .gitignore
 ├── composer.json
@@ -82,29 +65,28 @@ sistema-academia/
 └── README.md
 ```
 
-## Instalação e execução
+## Instalação
 
-### 1. Clonar o repositório
-
-Abra o terminal e execute:
+### 1. Clonar o projeto
 
 ```bash
 git clone URL_DO_REPOSITORIO
-```
-
-Depois entre na pasta do projeto:
-
-```bash
 cd sistema-academia
 ```
 
-> Substitua `URL_DO_REPOSITORIO` pelo endereço do repositório no GitHub.
+### 2. Instalar o Composer
 
-### 2. Configurar o banco de dados
+Execute na raiz do projeto:
 
-O projeto utiliza um arquivo `.env` para configurar o acesso ao MySQL.
+```bash
+composer install
+```
 
-Crie o arquivo `.env` na raiz do projeto com:
+Para instalar as depedências
+
+### 3. Configurar o `.env`
+
+Crie o arquivo `.env` na raiz do projeto:
 
 ```env
 MYSQL_HOST=mysql
@@ -113,27 +95,7 @@ MYSQL_PASSWORD=123456
 MYSQL_DATABASE=academia
 ```
 
-Essas informações são utilizadas pelo Docker Compose para criar e configurar o banco de dados.
-
-### 3. Verificar o Docker
-
-Execute:
-
-```bash
-docker --version
-```
-
-E:
-
-```bash
-docker compose version
-```
-
-Se os dois comandos retornarem as versões instaladas, o ambiente está pronto.
-
-### 4. Construir o container da aplicação
-
-Na raiz do projeto, execute:
+### 4. Construir os containers
 
 ```bash
 docker compose build
@@ -141,25 +103,17 @@ docker compose build
 
 ### 5. Iniciar o sistema
 
-Execute:
-
 ```bash
 docker compose up -d
 ```
 
-O parâmetro `-d` faz os containers serem executados em segundo plano.
-
 ### 6. Verificar os containers
-
-Execute:
 
 ```bash
 docker compose ps
 ```
 
-Os containers da aplicação e do banco de dados devem aparecer em execução.
-
-Os nomes utilizados pelo projeto são:
+Os containers utilizados são:
 
 ```text
 academia_app
@@ -168,7 +122,7 @@ academia_mysql
 
 ### 7. Acessar o sistema
 
-Abra o navegador e acesse:
+Abra:
 
 ```text
 http://localhost:8080
@@ -176,23 +130,23 @@ http://localhost:8080
 
 ## Banco de dados
 
-O banco de dados utilizado pelo sistema é o MySQL 8.0.
+O sistema utiliza MySQL 8.0.
 
-O banco é criado automaticamente pelo Docker Compose com o nome:
+O banco utilizado é:
 
 ```text
 academia
 ```
 
-As tabelas são criadas automaticamente através do sistema de migrations quando a aplicação é iniciada.
+As tabelas são criadas automaticamente pelas migrations quando a aplicação é iniciada.
 
-O arquivo responsável pelas migrations é:
+Arquivo responsável:
 
 ```text
 config/Migrations.php
 ```
 
-As principais tabelas são:
+Principais tabelas:
 
 ```text
 planos
@@ -200,3 +154,7 @@ clientes
 pagamentos
 acessos
 ```
+
+## Autor
+
+Francisco Martins Gonçalves Gomes
