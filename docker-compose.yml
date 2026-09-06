@@ -15,7 +15,6 @@ services:
       - .env
     restart: unless-stopped
 
-
   mysql:
     image: mysql:8.0
     container_name: academia_mysql
