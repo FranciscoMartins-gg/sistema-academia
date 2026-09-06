@@ -26,6 +26,41 @@ class AcessoModel
         return $stmt->fetchAll();
     }
 
+    public function findAberto(int $id_cliente): ?array
+{
+    $sql = "SELECT *
+            FROM acessos
+            WHERE id_cliente = :id_cliente
+            AND hora_saida IS NULL
+            AND data = CURDATE()
+            ORDER BY hora_entrada DESC
+            LIMIT 1";
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':id_cliente' => $id_cliente
+    ]);
+
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $resultado ?: null;
+}
+
+public function findByCliente(int $id_cliente): array
+{
+    $sql = "SELECT *
+            FROM acessos
+            WHERE id_cliente = :id_cliente
+            ORDER BY hora_entrada DESC";
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':id_cliente' => $id_cliente
+    ]);
+
+    return $stmt->fetchAll();
+}
+
     public function create(int $id_cliente): bool
     {
         if($this->verificarEntrada($id_cliente)) return false;
@@ -55,21 +90,30 @@ class AcessoModel
         return (int) $stmt->fetch()["total"] > 0;
     }
 
-    public function update(int $id_acesso): bool
+    public function update(int $id_cliente): bool
     {
         $hora_saida = date('H:i:s');
 
-        $sql = "UPDATE acessos SET hora_saida = :hora_saida WHERE id_acesso = :id_acesso";
+        $sql = "UPDATE acessos SET hora_saida = :hora_saida WHERE id_cliente = :id_cliente AND data = CURDATE()";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([":id_cliente" => $id_cliente, ":hora_saida" => $hora_saida]);
+    }
+
+    public function updateAcesso(int $id_acesso): bool
+    {
+        $hora_saida = date('H:i:s');
+
+        $sql = "UPDATE acessos SET hora_saida = :hora_saida WHERE id_acesso = :id_acesso ";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([":id_acesso" => $id_acesso, ":hora_saida" => $hora_saida]);
     }
-
 
     public function countToday(): int
     {
         $sql = "SELECT COUNT(*) AS total
         FROM acessos
         WHERE data = CURDATE()
+        AND hora_saida IS null
     ";
 
         $stmt = $this->pdo->prepare($sql);
@@ -83,6 +127,8 @@ class AcessoModel
         FROM acessos a
         INNER JOIN clientes c
         ON a.id_cliente = c.id_cliente
+        WHERE a.data = CURDATE() 
+        AND a.hora_saida IS null
         ORDER BY a.data, a.hora_entrada DESC 
         LIMIT 5
         ";

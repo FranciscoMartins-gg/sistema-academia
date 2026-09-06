@@ -22,26 +22,63 @@ switch ($rota) {
         $dashboardController->index();
         break;
 
+    //Clientes
     case '/clientes':
         $clienteController->index();
         break;
-    
+
+    case '/clientes/cadastrar':
+        $clienteController->cadastrar();
+        break;
+
+    case '/clientes/editar':
+        $clienteController->editar();
+        break;
+
+    case '/clientes/deletar':
+        $clienteController->deletar();
+    break;
+
+
+
     case '/login':
         $loginController->index();
         break;
 
-    case '/acesso':
+    case '/acessos':
         $acessoController->index();
         break;
-    
-    case '/pagamento':
+
+    case '/acessos/entrada':
+        $acessoController->entrada();
+        break;
+
+    case '/acessos/saida':
+        $acessoController->saida();
+        break;
+
+
+    case '/pagamentos':
         $pagamentoController->index();
         break;
 
-    case '/plano':
+    case '/pagamentos/pagar':
+        $pagamentoController->pagar();
+        break;
+
+    case '/planos':
         $planoController->index();
         break;
-    
+
+    case '/planos/cadastrar':
+        $planoController->create();
+        break;
+
+    case '/planos/editar':
+        $planoController->editar();
+        break;
+        
+
     default:
         echo "404 - Página não encontrada";
         break;

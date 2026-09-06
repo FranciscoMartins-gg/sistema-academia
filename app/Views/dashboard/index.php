@@ -12,8 +12,8 @@ $pagina = "dashboard";
     <meta charset="UTF-8">
     <title>dashboard</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/dashboard/dashboard.css">
 </head>
 
 <body>

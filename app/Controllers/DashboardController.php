@@ -42,7 +42,6 @@ class DashboardController
 
             Logger::erro($e->getMessage());
 
-            http_response_code(500);
 
             echo "Erro ao carregar o dashboard...";
         }

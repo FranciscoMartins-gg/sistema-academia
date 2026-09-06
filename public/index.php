@@ -1,4 +1,5 @@
 <?php
+session_start();
 date_default_timezone_set('America/Bahia');
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -20,10 +21,11 @@ $cliente = new ClienteModel();
 $acesso = new AcessoModel();
 $pagamento = new PagamentoModel();
 
-$acesso->create(1);
-// $acesso->updateSaida(2);
+// $acesso->update(3);
+// $acesso->create(6);
 // print_r($acesso->findAll());
 // $plano->create(["nome_plano"=>"Gold", "valor"=>200, "duracao_meses"=>12]);
+// $plano->create(["nome_plano"=>"Silver", "valor"=>50, "duracao_meses"=>1]);
 // $dados = $plano->findAll();
 // print_r($dados);
 
@@ -36,7 +38,7 @@ $acesso->create(1);
 //         echo "</br>";
 //     }
 //     $pagamento->pagar(12);
-//     // $cliente->create(["id_plano"=>1, "nome_cliente"=>"Francisco Martins", "email"=>"teste1@gmail.com", "telefone"=>"74-999274909", "status"=>"ATIVO"]);
+    // $cliente->create(["id_plano"=>1, "nome_cliente"=>"Maria Eduarada", "email"=>"teste3@gmail.com", "telefone"=>"74-999274909", "status"=>"ATIVO"]);
 // } catch (PDOException $th) {
 //     echo $th;
 // }

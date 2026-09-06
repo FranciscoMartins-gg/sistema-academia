@@ -1,0 +1,69 @@
+
+/* MENU LATERAL */
+
+.clientes-menu {
+    width: 220px;
+    min-width: 190px;
+    height: fit-content;
+    background: #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* LINKS */
+.clientes-menu a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 58px;
+    padding: 0 20px;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #3b3b3b;
+    transition: 0.2s ease;
+}
+
+/* ÍCONE */
+.clientes-menu a::before {
+    margin-right: 12px;
+    font-size: 17px;
+}
+
+/* ÍCONE LISTAR */
+.clientes-menu a:first-child::before {
+    content: "☷";
+}
+
+/* ÍCONE CADASTRAR */
+.clientes-menu a:last-child::before {
+    content: "+";
+    font-size: 22px;
+}
+
+/* HOVER */
+.clientes-menu a:hover {
+    background: #333333;
+    color: #ff7300;
+}
+
+/* ITEM ATIVO */
+.clientes-menu a.ativo {
+    background: #3b271b;
+    color: #ff7300;
+}
+
+
+/* BARRA LARANJA DO ITEM ATIVO */
+.clientes-menu a.ativo::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+
+    background: #ff7300;
+}

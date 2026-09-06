@@ -22,6 +22,11 @@
             Clientes
         </a>
 
+        <a href="/acessos"
+           class="<?= $pagina === 'acessos' ? 'active' : '' ?>">
+            Acessos
+        </a>
+
         <a href="/planos"
            class="<?= $pagina === 'planos' ? 'active' : '' ?>">
             Planos

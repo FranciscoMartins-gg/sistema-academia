@@ -33,6 +33,31 @@ class PagamentoModel
         ]);
     }
 
+    public function findByCliente(int $id_cliente, string $status = ''): array
+{
+    $sql = "SELECT *
+            FROM pagamentos
+            WHERE id_cliente = :id_cliente";
+
+    if (in_array($status, ['PAGO', 'PENDENTE', 'ATRASADO'])) {
+        $sql .= " AND status = :status";
+    }
+
+    $sql .= " ORDER BY data_vencimento ASC";
+
+    $stmt = $this->pdo->prepare($sql);
+
+    $stmt->bindValue(':id_cliente', $id_cliente, PDO::PARAM_INT);
+
+    if (in_array($status, ['PAGO', 'PENDENTE', 'ATRASADO'])) {
+        $stmt->bindValue(':status', $status);
+    }
+
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
     public function findId(int $id_pagamento): array
     {
         $sql = "SELECT * FROM pagamentos 

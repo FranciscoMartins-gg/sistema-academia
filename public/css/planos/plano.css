@@ -1,0 +1,97 @@
+.planos-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px 10%;
+}
+
+.planos-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.planos-topo {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.pesquisa {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 0 18px;
+    background-color: #f1d3b0;
+    color: #333;
+    font-size: 14px;
+}
+
+.pesquisa::placeholder {
+    color: #777;
+}
+
+.planos-tabela {
+    width: 100%;
+    background-color: #292929;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.planos-tabela table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.planos-tabela th {
+    text-align: left;
+    padding: 17px 12px;
+    color: #ffffff;
+    font-size: 16px;
+    border-bottom: 1px solid #444;
+}
+
+.planos-tabela td {
+    padding: 10px 12px;
+    color: #ffffff;
+    font-size: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.planos-tabela tr:last-child td {
+    border-bottom: none;
+}
+
+.acao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 31px;
+    margin-right: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.acao:hover {
+    transform: scale(1.08);
+    background-color: #eeeeee;
+}
+
+@media (max-width: 900px) {
+    .planos-container {
+        padding: 25px;
+    }
+
+    .planos-tabela {
+        overflow-x: auto;
+    }
+
+    .planos-tabela table {
+        min-width: 600px;
+    }
+}

@@ -132,11 +132,44 @@ class ClienteModel
 
     }
 
-    public function findAll(): array
+    public function update(array $cliente): bool
     {
-        $sql = "SELECT * FROM clientes";
+        $sql = "UPDATE clientes SET nome_cliente = :nome_cliente, email = :email, telefone = :telefone, id_plano = :id_plano, status = :status
+        WHERE id_cliente = :id_cliente";
+
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute();
+
+        return $stmt->execute([
+            'nome_cliente' => $cliente["nome_cliente"],
+            'email' => $cliente["email"],
+            'telefone' => $cliente["telefone"],
+            'id_plano' => $cliente["id_plano"],
+            'status' => $cliente["status"],
+            'id_cliente' => $cliente["id_cliente"]
+        ]);
+    }
+
+    public function findAll(string $busca = ''): array
+    {
+        $sql = "SELECT c.id_cliente, c.nome_cliente, c.email, c.telefone, c.status, p.nome_plano
+        FROM clientes c
+        LEFT JOIN planos p
+        ON c.id_plano = p.id_plano";
+
+        if ($busca !== '') {
+            $sql .= " WHERE c.nome_cliente LIKE :busca";
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+
+        if ($busca !== '') {
+            $stmt->execute([
+                ':busca' => '%' . $busca . '%'
+            ]);
+        } else {
+            $stmt->execute();
+        }
+
         return $stmt->fetchAll();
     }
 
@@ -167,6 +200,13 @@ class ClienteModel
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return (int) $stmt->fetch()["total"];
+    }
+
+    public function delete(int $id_cliente):bool{
+        $sql = "DELETE FROM clientes WHERE id_cliente = :id_cliente";
+
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([":id_cliente"=>$id_cliente]);
     }
 
     public function countActive(): int
